@@ -17,11 +17,12 @@ function persistentCheckout() {
   const getList = () => list.slice(); // slice preventing modification of output
   const getLength = () => reduce(list, (sum, n) => sum + n.count, 0);
   const getTotal = () => reduce(list, (sum, n) => sum + (n.count * n.price), 0);
+  const flushCart = () => list.splice(0, list.length);
 
   const removeItem = id => {
     const index = findIndex(list, el => id === el.id);
     if (index !== -1) {
-      list.pop(index);
+      list.splice(index,1);
     }
   }
 
@@ -46,7 +47,7 @@ function persistentCheckout() {
     }
   }
 
-  return { getList, getLength, getTotal, removeItem, reduceCount, addItem }
+  return { getList, getLength, getTotal, removeItem, reduceCount, addItem, flushCart }
 }
 
 export default persistentCheckout;

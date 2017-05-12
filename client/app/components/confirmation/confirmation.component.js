@@ -1,12 +1,12 @@
-import template from './home.html';
-import controller from './home.controller';
-import './home.scss';
+import template from './confirmation.html';
+import controller from './confirmation.controller';
+import './confirmation.scss';
 
-let homeComponent = {
+let confirmationComponent = {
   restrict: 'E',
   bindings: {},
   template,
   controller
 };
 
-export default homeComponent;
+export default confirmationComponent;

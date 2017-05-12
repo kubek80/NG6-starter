@@ -1,3 +1,5 @@
+import mock from '../products.mock';
+
 class CheckOutController {
   constructor(appService) {
     this.name = 'Check out';
@@ -7,6 +9,7 @@ class CheckOutController {
   $onInit() {
     // adding data onIntit to keep constructor small
     this.products = this.cart.getList();
+    this.couriers = angular.copy(mock.couriers);
   }
 
   addItem(item) {
@@ -22,6 +25,11 @@ class CheckOutController {
   removeItem(id) {
     this.cart.removeItem(id);
     this.products = this.cart.getList();
+  }
+
+  getTotal() {
+    const courierPrice = parseFloat(this.deliveryOption, 10);
+    return this.cart.getTotal() + courierPrice;
   }
 }
 

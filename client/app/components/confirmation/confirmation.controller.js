@@ -1,7 +1,15 @@
-class HomeController {
-  constructor() {
-    this.name = 'home';
+class ConfirmationController {
+  constructor(appService) {
+    this.name = 'Confirmation';
+    this.cart = appService.init();
   }
+
+  $onInit() {
+    this.cart.flushCart();
+  }
+
 }
 
-export default HomeController;
+ConfirmationController.$inject = ['app.service'];
+
+export default ConfirmationController;

@@ -1,9 +1,8 @@
 .checkout-list-item {
-  border: 1px solid black;
+  border: 1px solid #eeeeee;
   border-radius: 5px;
-  box-shadow: 1px 1px 1px black;
-  max-height: 150px;
-  padding:10px;
+  padding: 10px;
+  margin: 5px;
 }
 
 .checkout-list-item-image {
@@ -43,10 +42,10 @@
   display: block;
   font-size: 20px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .checkout-empty-info {
-  width: 100%;
   text-align: center;
   font-size: 20px;
   line-height: 70px;
@@ -57,6 +56,17 @@
   margin: 20px;
 }
 
-.checkout-total, .checkout-product-total {
+.checkout-couriers {
+  .title {
+    font-size:24px;
+    font-weight: bold;
+  }
+  label {
+    font-size:16px;
+    line-height: 24px;
+  }
+}
+
+.checkout-total, .checkout-product-total, .checkout-total-total {
   text-align:right;
 }

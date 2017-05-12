@@ -1,8 +1,8 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import homeComponent from './home.component';
+import confirmationComponent from './confirmation.component';
 
-let homeModule = angular.module('home', [
+let confirmationModule = angular.module('confirmation', [
   uiRouter
 ])
 
@@ -12,14 +12,14 @@ let homeModule = angular.module('home', [
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('home', {
-      url: '/',
-      component: 'home'
+    .state('confirmation', {
+      url: '/confirmation',
+      component: 'app.confirmation'
     });
 })
 
-.component('home', homeComponent)
-  
+.component('app.confirmation', confirmationComponent)
+
 .name;
 
-export default homeModule;
+export default confirmationModule;
