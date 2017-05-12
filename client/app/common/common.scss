@@ -10,9 +10,131 @@ $darkTextColor:  #212121;
 
 body {
    height: 100%;
-   // browsers default to 16px for font-size,
-   // so setting top-level font-size to 62.5%
-   // scales 1rem to equal 10px.
    font: 62.5% 'Roboto', sans-serif;
+   padding-top: 70px;
 }
 
+// some global styles
+.type-bold {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+// quick svg naming collision fix
+
+.avocado .cls-1{isolation:isolate;}
+.avocado .cls-2{fill:#e3f7f5;mix-blend-mode:multiply;}
+.avocado .cls-3{fill:#e0d98b;}
+.avocado .cls-4{fill:#505825;}
+.avocado .cls-5{opacity:0.5;}
+.avocado .cls-6{fill:#9fb23d;}
+.avocado .cls-7{fill:#c96;}
+.avocado .cls-11,.avocado .cls-8{fill:none;}
+.avocado .cls-8{stroke:#963;stroke-linecap:round;stroke-miterlimit:10;stroke-width:3px;}
+.avocado .cls-9{fill:#fff;opacity:0.58;}
+.avocado .cls-10{opacity:0.35;mix-blend-mode:color-burn;}
+.avocado .cls-12{fill:#666d41;}
+
+.chocolate .cls-1{isolation:isolate;}
+.chocolate .cls-2{fill:#8dc9c0;}
+.chocolate .cls-3{fill:#894f1a;}
+.chocolate .cls-4{fill:#e3f7f5;opacity:0.66;}
+.chocolate .cls-5{fill:#522900;}
+.chocolate .cls-6{fill:#6b3e15;}
+.chocolate .cls-7{fill:#401600;opacity:0.3;}
+.chocolate .cls-8{fill:#d9073f;}
+.chocolate .cls-9{fill:#a7c203;}
+.chocolate .cls-10{fill:#a20e30;}
+.chocolate .cls-11{mix-blend-mode:screen;}.cls-12{fill:none;}
+.chocolate .cls-13{fill:#5a4a44;}
+.chocolate .cls-14{fill:#fff;opacity:0.5;mix-blend-mode:overlay;}
+
+.coffee .cls-1{isolation:isolate;}
+.coffee .cls-2{fill:#e3f7f5;}
+.coffee .cls-2,.coffee .cls-4{mix-blend-mode:multiply;}
+.coffee .cls-3{fill:#b89882;}
+.coffee .cls-5,.coffee .cls-6{fill:#fff;}
+.coffee .cls-6{opacity:0.5;}.cls-6,.cls-9{mix-blend-mode:overlay;}
+.coffee .cls-7{fill:#755746;}
+.coffee .cls-8{fill:#423029;}
+.coffee .cls-9{opacity:0.59;}
+.coffee .cls-10{fill:none;}
+
+.apple .cls-1{isolation:isolate;}.apple .cls-2{fill:#8dc9c0;}
+.apple .cls-3,.apple .cls-8{fill:#9fb23d;}.apple .cls-4{fill:#e3f7f5;opacity:0.64;}
+.apple .cls-5{fill:#e0d98b;}.apple .cls-6{fill:#a7c203;}
+.apple .cls-10,.apple .cls-7{fill:none;}
+.apple .cls-7{stroke:#998675;stroke-linecap:round;stroke-miterlimit:10;stroke-width:5px;}
+.apple .cls-12,.cls-8{opacity:0.5;}
+.apple .cls-9{opacity:0.34;mix-blend-mode:multiply;}
+.apple .cls-11{fill:#a6a57b;}
+.apple .cls-12{fill:#fff;mix-blend-mode:overlay;}
+
+.kiwi .cls-1{isolation:isolate;}.kiwi .cls-2{fill:#f7f0e6;}.kiwi .cls-3{fill:#a7c203;}
+.kiwi .cls-4{fill:#f2d541;}.kiwi .cls-5{fill:#f8f8f8;}.kiwi .cls-6,.kiwi .cls-9{fill:#fff;}
+.kiwi .cls-6,.kiwi .cls-7{opacity:0.5;mix-blend-mode:overlay;}.kiwi .cls-8{fill:none;}
+
+.mango .cls-1{fill:none;}.mango .cls-2{isolation:isolate;}.mango .cls-3{fill:#e3f7f5;}
+.mango .cls-4{fill:#fbce79;}.mango .cls-5{opacity:0.39;}.mango .cls-6{fill:#7cc1b7;}
+.mango .cls-7{fill:#f18316;}.mango .cls-13,.mango .cls-8{opacity:0.73;}
+.mango .cls-9{fill:#ecf4fc;}.mango .cls-10{fill:#becddb;}.mango .cls-11{fill:#f3bd3f;}
+.mango .cls-11,.mango .cls-15{mix-blend-mode:multiply;}.mango .cls-12{fill:#fff;opacity:0.5;}
+.mango .cls-12,.mango .cls-13{mix-blend-mode:overlay;}
+.mango .cls-14{clip-path:url(#clip-path);}.mango .cls-15{opacity:0.31;}
+.mango .cls-16{fill:#8dc9c0;}.mango .cls-17{fill:#383838;opacity:0.13;}
+.mango .cls-18{fill:#f2d541;}.mango .cls-19{opacity:0.4;}
+.mango .cls-20{fill:#c56520;opacity:0.38;mix-blend-mode:color-burn;}
+.mango .cls-21{fill:#fed03c;}.mango .cls-22{fill:#f6941a;}
+.mango .cls-23{fill:#d43005;}.mango .cls-24{fill:#8aa665;}
+.mango .cls-25{fill:#0e786d;}
+
+.melon .cls-1{isolation:isolate;}.melon .cls-2{fill:#ffa700;}.melon .cls-3{fill:#e4d1bc;}
+.melon .cls-4{fill:#a7c203;}.melon .cls-5{fill:#ffe5b4;}.melon .cls-6{fill:#e8b601;}
+.melon .cls-7{opacity:0.24;mix-blend-mode:multiply;}.melon .cls-8{fill:none;}
+.melon .cls-9{fill:#e86520;}
+.melon .cls-10{fill:#fff;opacity:0.5;mix-blend-mode:overlay;}
+
+.orange .cls-1{isolation:isolate;}
+.orange .cls-2{fill:#e3f7f5;}
+.orange .cls-10,.orange .cls-11,.orange .cls-2{mix-blend-mode:multiply;}
+.orange .cls-10,.orange .cls-3,.orange .cls-9{fill:#f0b31d;}
+.orange .cls-3{opacity:0.93;}.orange .cls-4{fill:#8dc9c0;opacity:0.59;}
+.orange .cls-14,.orange .cls-4{mix-blend-mode:overlay;}
+.orange .cls-12,.orange .cls-5{fill:none;}
+.orange .cls-5{stroke:#c56520;stroke-linecap:round;stroke-miterlimit:10;stroke-width:6px;}
+.orange .cls-6{fill:#ffa700;}.orange .cls-7{fill:#a7c203;}
+.orange .cls-8{fill:#f9ee9c;}.orange .cls-11{opacity:0.32;}.orange .cls-13{fill:#ff6d20;}
+.orange .cls-14{fill:#fff;opacity:0.5;}
+
+.rapsberry .cls-1{isolation:isolate;}.rapsberry .cls-2{fill:#e3f7f5;}
+.rapsberry .cls-2,.rapsberry .cls-3{opacity:0.66;}
+.rapsberry .cls-3{fill:#c5d3d1;}.rapsberry .cls-4{fill:#d9073f;}
+.rapsberry .cls-5{fill:#f2d541;}
+.rapsberry .cls-10,.rapsberry .cls-6,.rapsberry .cls-9{mix-blend-mode:overlay;}
+.rapsberry .cls-7{fill:none;}
+.rapsberry .cls-10,.rapsberry .cls-8{fill:#fff;}
+.rapsberry .cls-9{opacity:0.95;}.rapsberry .cls-10{opacity:0.5;}
+
+.strawberry .cls-1{isolation:isolate;}
+.strawberry .cls-2{fill:#8dc9c0;opacity:0.59;}
+.strawberry .cls-2,.strawberry .cls-5{mix-blend-mode:overlay;}
+.strawberry .cls-3{fill:#e93c4f;}
+.strawberry .cls-4{fill:#e3f7f5;mix-blend-mode:multiply;}
+.strawberry .cls-5{fill:#fff;opacity:0.5;}
+.strawberry .cls-6{fill:#d9073f;}.strawberry .cls-7{fill:#a7c203;}
+.strawberry .cls-8{fill:#a20e30;}.strawberry .cls-9{fill:#f8f8f8;}
+.strawberry .cls-10{opacity:0.24;mix-blend-mode:difference;}
+.strawberry .cls-11{fill:none;}.strawberry .cls-12{fill:#ae2d4a;}
+
+.vanilla .cls-1{isolation:isolate;}.vanilla .cls-2{fill:#e3f7f5;mix-blend-mode:multiply;}
+.vanilla .cls-3{fill:#a6916a;}.vanilla .cls-4{fill:#faf2db;}.vanilla .cls-5{fill:#82665c;}
+.vanilla .cls-6,.cls-7{fill:#fff;}.vanilla .cls-7{opacity:0.5;mix-blend-mode:overlay;}
+
+.watermelon .cls-1{isolation:isolate;}
+.watermelon .cls-2{fill:#e3f7f5;mix-blend-mode:multiply;}
+.watermelon .cls-3{fill:#f0706d;}
+.watermelon .cls-4,.watermelon .cls-9{fill:#fff;}
+.watermelon .cls-4,.watermelon .cls-7{opacity:0.5;mix-blend-mode:overlay;}
+.watermelon .cls-5{fill:#8abd68;}.watermelon .cls-6{fill:#f8e9cf;}
+.watermelon .cls-8{fill:none;}

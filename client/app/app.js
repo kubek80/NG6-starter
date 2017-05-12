@@ -3,6 +3,7 @@ import uiRouter from 'angular-ui-router';
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
+import AppService from './app.service';
 import 'normalize.css';
 
 angular.module('app', [
@@ -16,5 +17,5 @@ angular.module('app', [
     // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
-
+  .service('app.service', AppService)
   .component('app', AppComponent);

@@ -1,0 +1,62 @@
+.checkout-list-item {
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px black;
+  max-height: 150px;
+  padding:10px;
+}
+
+.checkout-list-item-image {
+  text-align: left;
+  & svg {
+    max-height: 130px;
+  }
+}
+
+.checkout-list-item-title {
+  font-family: 'Indie Flower', cursive;
+  font-size: 30px;
+}
+
+.checkout-product-action {
+  font-size: 16px;
+  font-weight: bold;
+  float: left;
+  margin: 0 5px 0 0;
+  padding: 0 0 5px 0;
+  height: 36px;
+  width: 36px;
+  background-color: #ef6d6d;
+  color: white;
+  border: none;
+}
+
+.checkout-product-count {
+  font-size: 24px;
+  line-height: 36px;
+  margin: 0 15px 0 10px;
+  font-weight: bold;
+  float: left;
+}
+
+.checkout-back-button {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.checkout-empty-info {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 70px;
+  background-color: #ffdede;
+  border: 1px solid #944242;
+  border-radius: 5px;
+  color: #944242;
+  margin: 20px;
+}
+
+.checkout-total, .checkout-product-total {
+  text-align:right;
+}

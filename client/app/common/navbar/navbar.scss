@@ -2,8 +2,9 @@
 
 .navbar {
   height: 6.5rem;
-  background-color: $primaryColor;
+  background-color: #ef6d6d;
   padding: 1rem;
+  border-radius: 0px;
 
   .nav-links,
   .logo {
@@ -11,12 +12,43 @@
   }
 
   .logo {
-    color: $lightTextColor;
-    margin-right: 50%;
+    color: #fff;
+    font-family: 'Indie Flower', cursive;
+    margin-right: 50px;
+    & a {
+      color: #fff;
+      font-size: 34px;
+      text-decoration: none;
+      &:hover, &:active {
+        text-decoration: none;
+      }
+    }
   }
+}
 
-  .nav-links span {
-    color: $lightTextColor;
-    font-size: 1.6rem;
+.navbar-shopping-cart {
+  float:right;
+  padding: 6px 20px;
+  &:hover {
+    background-color:#ad4c4c;
   }
+}
+
+.navbar-shopping-cart svg {
+  height: 30px;
+  width: 30px;
+}
+
+.navbar-shopping-cart-info {
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 50px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    font-size: 9px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
 }

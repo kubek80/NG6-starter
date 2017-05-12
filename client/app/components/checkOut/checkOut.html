@@ -1,0 +1,54 @@
+<!-- angular naming convention for big teams to prevent conflicts -->
+<app.common.navbar products="$ctrl.cart.getLength()"></app.common.navbar>
+<main>
+  <div class="container">
+    <a ui-sref="home" class="checkout-back-button"><< back to shopping</a>
+    <div ng-if="!$ctrl.cart.getLength()" class="checkout-empty-info">
+      Your shopping cart is empty!
+    </div>
+    <div class="row">
+      <div ng-repeat="product in $ctrl.products track by product.id"
+           class="row checkout-list-item">
+      <div ng-bind-html="::product.image | svg"
+           class="col-sm-2 checkout-list-item-image"
+           ng-class="::product.image"></div>
+      <div class="col-sm-3">
+        <span class="type-bold">name:</span>
+        <div class="checkout-list-item-title" ng-bind="::product.name"></div>
+      </div>
+
+      <div class="col-sm-4">
+        <span class="type-bold">actions:</span>
+        <div>
+          <button class="checkout-product-action" ng-click="$ctrl.addItem(product)">+</button>
+          <div class="checkout-product-count" ng-bind="product.count"></div>
+          <button class="checkout-product-action" ng-click="$ctrl.reduceCount(product.id)">-</button>
+        </div>
+        <button class="checkout-product-action" ng-click="$ctrl.removeItem(product.id)">x</button>
+      </div>
+
+      <div class="col-sm-3 checkout-total">
+        <span class="type-bold">total:</span>
+        <div ng-bind="product.price * product.count | currency" class="product-list-item-price">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="checkout-product-total type-bold" ng-if="$ctrl.cart.getLength() > 0">
+      <hr/>
+      Products total: {{$ctrl.cart.getTotal() | currency}}
+      <button class="btn btn-primary" ng-click="$ctrl.showDeliveryOptions = true">
+        Get Delivery Opitons</button>
+    </div>
+
+    <div class="checkout-couriers"  ng-if="$ctrl.cart.getLength() > 0 && $ctrl.showDeliveryOptions">
+      <hr />
+      <button class="btn btn-primary" ui-sref="thank-you">Placen an order</button>
+    </div>
+  </div>
+
+  
+  <a ui-sref="home" class="checkout-back-button"><< back to shopping</a>
+</div>
+</main>

@@ -14,12 +14,12 @@ let homeModule = angular.module('home', [
   $stateProvider
     .state('home', {
       url: '/',
-      component: 'app.home'
+      component: 'home'
     });
 })
 
-.component('app.home', homeComponent)
-
+.component('home', homeComponent)
+  
 .name;
 
 export default homeModule;

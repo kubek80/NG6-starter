@@ -1,12 +1,13 @@
 import template from './navbar.html';
-import controller from './navbar.controller';
 import './navbar.scss';
 
+// one way binding between parent / child component
 let navbarComponent = {
   restrict: 'E',
-  bindings: {},
-  template,
-  controller
+  bindings: {
+    products: '<'
+  },
+  template
 };
 
 export default navbarComponent;
