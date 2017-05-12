@@ -1,9 +1,9 @@
 # Quick start
 ### clone
-`git clone https://github.com/kubek80/NG6-starter.git jakubzwirko`
+`git clone https://github.com/kubek80/NG6-starter.git jz`
 
 ### change directory
-`cd jakubzwirko`
+`cd jz`
 
 ### install dependencies
 `npm i`
