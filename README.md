@@ -1,13 +1,21 @@
 # Quick start
+### clone
 `git clone https://github.com/kubek80/NG6-starter.git jakubzwirko`
-`cd jakubzwirko`
-`npm i` or `yarn`
 
-## tests
+### change directory
+`cd jakubzwirko`
+
+### install dependencies
+`npm i`
+
+### tests
 `npm test`
 
-## run
+### run
 `npm start`
+
+### link (default)
+`localhost:3000`
 
 # Walkthrough
 ## Build System
