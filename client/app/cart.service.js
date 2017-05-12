@@ -27,7 +27,6 @@ function persistentCheckout() {
   }
 
   const reduceCount = id => {
-    console.log(id);
     const index = findIndex(list, el => id === el.id);
     if (index !== -1) {
       // removing item from list if there is no more items
