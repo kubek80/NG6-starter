@@ -1,9 +1,16 @@
-import HomeModule from './home'
+import ConfirmationModule from './confirmation';
 
-describe('Home', () => {
+describe('Confirmation', () => {
   let $rootScope, $state, $location, $componentController, $compile;
 
-  beforeEach(window.module(HomeModule));
+  beforeEach(window.module(ConfirmationModule));
+
+  beforeEach(window.module($provide => {
+    $provide.service('app.service', () => ({
+      init: () => ({ flushCart: () => {} })
+    }));
+    $provide.value('svgFilter', () => {});
+  }));
 
   beforeEach(inject(($injector) => {
     $rootScope = $injector.get('$rootScope');
@@ -15,10 +22,10 @@ describe('Home', () => {
 
   describe('Module', () => {
     // top-level specs: i.e., routes, injection, naming
-    it('default component should be home', () => {
-      $location.url('/');
+    it('confirmation component should exist', () => {
+      $location.url('/confirmation');
       $rootScope.$digest();
-      expect($state.current.component).to.eq('home');
+      expect($state.current.component).to.eq('app.confirmation');
     });
   });
 
@@ -26,7 +33,7 @@ describe('Home', () => {
     // controller specs
     let controller;
     beforeEach(() => {
-      controller = $componentController('home', {
+      controller = $componentController('app.confirmation', {
         $scope: $rootScope.$new()
       });
     });
@@ -38,16 +45,19 @@ describe('Home', () => {
 
   describe('View', () => {
     // view layer specs.
-    let scope, template;
+    let scope, template, ctrl;
 
     beforeEach(() => {
       scope = $rootScope.$new();
-      template = $compile('<home></home>')(scope);
+      template = $compile('<app.confirmation></app.confirmation>')(scope);
       scope.$apply();
     });
 
     it('has name in template', () => {
-      expect(template.find('h1').html()).to.eq('Found in home.html');
+      expect(template.find('h1').html()).to.eq('Thank you for your purchase.');
+    });
+    it('has navbar in template', () => {
+      expect(template.html()).to.match(/app.common.navbar/);
     });
 
   });

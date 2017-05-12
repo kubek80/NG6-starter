@@ -1,9 +1,16 @@
 import HomeModule from './home'
 
 describe('Home', () => {
-  let $rootScope, $state, $location, $componentController, $compile;
+  let $rootScope, $state, $location, $componentController, $compile, appService;
 
   beforeEach(window.module(HomeModule));
+
+  beforeEach(window.module($provide => {
+    $provide.service('app.service', () => ({
+      init: () => {}
+    }));
+    $provide.value('svgFilter', () => {});
+  }));
 
   beforeEach(inject(($injector) => {
     $rootScope = $injector.get('$rootScope');
@@ -11,6 +18,7 @@ describe('Home', () => {
     $state = $injector.get('$state');
     $location = $injector.get('$location');
     $compile = $injector.get('$compile');
+    appService = $injector.get('app.service');
   }));
 
   describe('Module', () => {
@@ -18,7 +26,7 @@ describe('Home', () => {
     it('default component should be home', () => {
       $location.url('/');
       $rootScope.$digest();
-      expect($state.current.component).to.eq('home');
+      expect($state.current.component).to.eq('app.home');
     });
   });
 
@@ -26,7 +34,7 @@ describe('Home', () => {
     // controller specs
     let controller;
     beforeEach(() => {
-      controller = $componentController('home', {
+      controller = $componentController('app.home', {
         $scope: $rootScope.$new()
       });
     });
@@ -42,12 +50,12 @@ describe('Home', () => {
 
     beforeEach(() => {
       scope = $rootScope.$new();
-      template = $compile('<home></home>')(scope);
+      template = $compile('<app.home></app.home>')(scope);
       scope.$apply();
     });
 
-    it('has name in template', () => {
-      expect(template.find('h1').html()).to.eq('Found in home.html');
+    it('has navbar in template', () => {
+      expect(template.html()).to.match(/app.common.navbar/);
     });
 
   });

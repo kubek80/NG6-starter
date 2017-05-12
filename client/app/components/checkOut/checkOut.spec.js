@@ -1,9 +1,16 @@
-import HomeModule from './home'
+import CheckoutModule from './checkOut';
 
-describe('Home', () => {
+describe('Check out', () => {
   let $rootScope, $state, $location, $componentController, $compile;
 
-  beforeEach(window.module(HomeModule));
+  beforeEach(window.module(CheckoutModule));
+
+  beforeEach(window.module($provide => {
+    $provide.service('app.service', () => ({
+      init: () => ({ getList: () => {} })
+    }));
+    $provide.value('svgFilter', () => {});
+  }));
 
   beforeEach(inject(($injector) => {
     $rootScope = $injector.get('$rootScope');
@@ -15,10 +22,10 @@ describe('Home', () => {
 
   describe('Module', () => {
     // top-level specs: i.e., routes, injection, naming
-    it('default component should be home', () => {
-      $location.url('/');
+    it('checkout component should exist', () => {
+      $location.url('/check-out');
       $rootScope.$digest();
-      expect($state.current.component).to.eq('home');
+      expect($state.current.component).to.eq('app.checkOut');
     });
   });
 
@@ -26,7 +33,7 @@ describe('Home', () => {
     // controller specs
     let controller;
     beforeEach(() => {
-      controller = $componentController('home', {
+      controller = $componentController('app.checkOut', {
         $scope: $rootScope.$new()
       });
     });
@@ -42,12 +49,15 @@ describe('Home', () => {
 
     beforeEach(() => {
       scope = $rootScope.$new();
-      template = $compile('<home></home>')(scope);
+      template = $compile('<app.check-out></app.check-out>')(scope);
       scope.$apply();
     });
 
-    it('has name in template', () => {
-      expect(template.find('h1').html()).to.eq('Found in home.html');
+    it('should show information that shopping cart is empty', () => {
+      expect(template.html()).to.match(/Your shopping cart is empty!/);
+    });
+    it('has navbar in template', () => {
+      expect(template.html()).to.match(/app.common.navbar/);
     });
 
   });

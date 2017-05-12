@@ -1,35 +1,20 @@
 import NavbarModule from './navbar'
 
 describe('Navbar', () => {
-  let $rootScope, $state, $location, $componentController, $compile;
+  let $rootScope, $location, $componentController, $compile;
 
   beforeEach(window.module(NavbarModule));
+
+  beforeEach(window.module($provide => {
+    $provide.value('svgFilter', () => {});
+  }));
 
   beforeEach(inject(($injector) => {
     $rootScope = $injector.get('$rootScope');
     $componentController = $injector.get('$componentController');
-    $state = $injector.get('$state');
     $location = $injector.get('$location');
     $compile = $injector.get('$compile');
   }));
-
-  describe('Module', () => {
-    // top-level specs: i.e., routes, injection, naming
-  });
-
-  describe('Controller', () => {
-    // controller specs
-    let controller;
-    beforeEach(() => {
-      controller = $componentController('navbar', {
-        $scope: $rootScope.$new()
-      });
-    });
-
-    it('has a name property', () => { // erase if removing this.name from the controller
-      expect(controller).to.have.property('name');
-    });
-  });
 
   describe('View', () => {
     // view layer specs.
@@ -37,13 +22,23 @@ describe('Navbar', () => {
 
     beforeEach(() => {
       scope = $rootScope.$new();
-      template = $compile('<navbar></navbar>')(scope);
+      scope.products = 1;
+      template = $compile('<app.common.navbar products="products"></app.common.navbar>')(scope);
       scope.$apply();
     });
 
     it('has name in template', () => {
-      expect(template.find('h1').find('a').html()).to.eq('navbar');
+      expect(template.find('h1').html()).to.match(/SMOOTHIE SHOP/g);
     });
 
+    it('has count in template if at least one product', () => {
+      expect(template.html()).to.match(/navbar-shopping-cart-info/);
+    });
+
+    it('does not have count in template if zero products', () => {
+      scope.products = 0;
+      scope.$apply();
+      expect(template.html()).not.to.match(/navbar-shopping-cart-info/);
+    });
   });
 });
