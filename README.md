@@ -2,22 +2,23 @@
 #### clone
 `git clone https://github.com/kubek80/NG6-starter.git jz`
 
-### change directory
+#### change directory
 `cd jz`
 
-### install dependencies
+#### install dependencies
 `npm i`
 
-### tests
+#### tests
 `npm test`
 
-### run
+#### run
 `npm start`
 
-### link (default)
+#### link (default)
 `localhost:3000`
 
 # Walkthrough
+(forked from NG6-starter)
 ## Build System
 NG6 uses NPM scripts, Gulp, and Webpack together for its build system. Yes, you don't need Gulp if you're using Webpack. This is true if your build system is only responsible for file manipulation. However, ours is not.
 
@@ -35,8 +36,6 @@ NG6 uses NPM scripts, Gulp, and Webpack together for its build system. Yes, you 
 * Starting and calling Webpack
 * Starting a development server (yes, Webpack can do this too)
 * Generating boilerplate for the Angular app
-
-**Check out the [JSPM version](https://github.com/angularclass/NG6-starter/tree/jspm)--an alternative to Webpack as an ES6 build system.**
 
 ## File Structure
 We use a componentized approach with NG6. This will be the eventual standard (and particularly helpful, if using
