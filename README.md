@@ -1,5 +1,5 @@
 # Quick start
-### clone
+#### clone
 `git clone https://github.com/kubek80/NG6-starter.git jz`
 
 ### change directory
