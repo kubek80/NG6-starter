@@ -5,9 +5,7 @@
       <!-- List and every element in the list is one time binded -->
       <div ng-repeat="product in ::$ctrl.products track by product.id"
            class="col-sm-4 product-list-item">
-        <div ng-bind-html="::product.image | svg"
-             class="product-list-item-image"
-             ng-class="::product.image"></div>
+        <img ng-src="{{::product.imgUrl}}" class="product-list-item-image" />
         <div ng-bind="::product.name" class="product-list-item-title"></div>
         <div ng-bind="::product.price | currency" class="product-list-item-price"></div>
         <button ng-click="$ctrl.addElementToCart(product)">Add to cart</button>
