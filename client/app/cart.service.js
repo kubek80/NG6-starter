@@ -2,14 +2,10 @@ import findIndex from 'lodash.findindex';
 import reduce from 'lodash.reduce';
 
 /*
-  Since it's test, I will mix few coding styles here :)
-  Idea of scoping services to persist data between routes is not mine and was pointed to
-  my current team by angular team members.
-
-  To reduce scoping of service I'm adding factory function (as per functional programming def),
+  I will mix few coding styles here :)
+  Idea of scoping services to persist data between routes is a pattern pointed by angular team members.
+  To reduce scoping of service constructing factory function was added (as per functional programming def),
   which is at the same time example of js closure and response to OO constructor function :)
-
-  I'm using build/minification friendly version of lodash
 */
 
 function persistentCheckout() {
